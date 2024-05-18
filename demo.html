@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="it">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>PRESENTAZIONE DI GRUPPO | PCTO 2024</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/black.css" id="theme">
+    <link rel="stylesheet" href="neon crusher css/styles.css">
+    
+    <!-- Tema utilizzato per l'evidenziazione della sintassi del codice -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css">
+
+    <style>
+        #secondaImmagine {
+            width: 350px;
+            transition: transform 0.3s ease-in-out;
+            position: absolute;
+            top: 40px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        h3 {
+            position: relative;
+            padding-top: 200px;
+            text-align: center;
+        }
+
+        #secondaImmagine:hover {
+            transform: translate(-50%, -50%) scale(1.2);
+        }
+
+		@keyframes gradientAnimation {
+            0% {
+                color: red;
+                transform: scale(1);
+            }
+            50% {
+                color: blue;
+                transform: scale(1.1);
+            }
+            100% {
+                color: green;
+                transform: scale(1);
+            }
+        }
+
+
+        .animated-text {
+            transition: transform 0.3s;
+        }
+
+
+        .animated-text:hover {
+            animation: gradientAnimation 1s infinite;
+			transform: scale(2.1)
+        }
+
+        .animated-text2 {
+			display: inline-block;
+            transition: transform 0.3s;
+			margin: 0;
+        }
+
+
+        .animated-text2:hover {
+            transform: scale(1.2);
+        }
+
+		.animated-text3 {
+			font-size: 30px;
+            display: inline-block;
+            transition: transform 0.1s;
+			margin: 0;
+        }
+
+        .animated-text3:hover {
+			animation: gradientAnimation 1s infinite;
+            transform: scale(2.1);
+        }
+        .text-size {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .image-container {
+            float: right;
+            margin-left: 0px;
+            transition: transform 0.3s;
+        }
+
+        .image-container:hover {
+            transform: scale(1.2);
+        }
+
+        .list-container {
+            float: left;
+            width: calc(100% - 200px);
+        }
+
+		.list-container ul.animated-list {
+            font-size: 25px;
+        }
+
+		.list-container ul.animated-list:hover {
+            transform: scale(1.1);
+			transition: transform 0.1s;
+        }
+
+		::selection {
+            background-color: transparent;
+            color: inherit;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section>
+                <h3>PRESENTAZIONE</h3>
+                <img id="secondaImmagine" src="Immagine_slide_1.jpg" alt="immagine">
+                <div>
+                    <p>
+                        <strong>GRUPPO 2</strong>
+                    </p>
+					</p>
+                    <p>IL GRUPPO È FORMATO DA:</p>
+					<p class="animated-text3">Bisanti Vito,</p>
+					<p class="animated-text3">Calsolaro Maurizio,</p>
+					<p class="animated-text3">Scarcella Thomas,</p>
+                    <p class="animated-text3">Melcarne Arianna,</p>
+					<p class="animated-text3">Urro Alessandro</p>
+                </div>
+            </section>	
+			<section>
+				<p class="text-size">COSA ABBIAMO IMPARATO IN QUESTE LEZIONI:</p>
+				<div class="image-container">
+					<img src="immagine_slide-2.jpg" alt="Immagine" width="200">
+				</div>
+				<div class="list-container">
+					<ul class="animated-list">
+						<li>Condividere il codice attraverso piattaforme cloud</li>
+						<li>Programmazione JavaScript (intercettare un evento, interrogare un API rest)</li>
+						<li>Interazione Client-Server (chiamate in rete, formato JSON, creare un server con Node.js)</li>
+						<li>Database (SQL e NoSQL, e riferimenti come Firebase e Docker)</li>
+					</ul>
+				</div>
+            </section>
+            <section>
+				<h3 style="height: max-content;">IL NOSTRO PROGETTO: NEON CRUSHER</h3>
+				<p class="image-container" >Abbiamo pensato ad una rivisitazione grafica del classico gioco Block Crusher con l'ntenzione di renderlo accattivante</p>
+            </section>
+
+            <section>
+				<h3 style="height: max-content;">LO SVILUPPO</h3>
+				<p class="image-container" >Con l'ausilio di ChatGPT abbiamo curato la logica e l'aspetto del progetto affinchè risultasse senza informazioni. Dividendoci i compiti, lo abbbiamo portato a termine.</p>
+            </section>
+            <section>
+                <p class="image-container" > - Thomas e Vito hanno idealizzato l'aspetto finale del gioco</p>
+                <p class="image-container" > - Maurizio e Alessandro si sono occupati della logica del gioco</p>
+                <p class="image-container" > - Arianna ha eseguito il bug testing permettendoci di migliore il codice</p>
+            </section>
+            <section>
+                <canvas id="gameCanvas" width="480" height="320"></canvas>
+                <button id="startButton">Start Game</button>
+                <div id="blockCounter">Remaining blocks: <span id="remainingBlocks">0</span></div>
+                <div id="gameOver">GAME OVER</div>
+                <div id="youWon">YOU WON</div>
+                <canvas id="neonTextCanvas" width="480" height="100"></canvas>
+            </section>
+            </div>
+    </div>
+
+    <script src="neon crusher js/script.js"></script>
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/search/search.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+        // Disponibile anche come modulo ES, vedere:
+        // https://revealjs.com/initialization/
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            center: true,
+            hash: true,
+
+            // Ulteriori informazioni sui plugin: https://revealjs.com/plugins/
+            plugins: [RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight]
+        });
+    </script>
+</body>
+
+</html>
